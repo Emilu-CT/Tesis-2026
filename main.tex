@@ -5,9 +5,10 @@
 \usepackage[utf8]{inputenc} % Por seguridad (aunque en LaTeX moderno ya es por defecto)
 \usepackage[spanish, es-tabla, es-noquoting]{babel}
 \usepackage{csquotes} % Evita advertencias fatales al usar BibLaTeX con Babel
+\usepackage{ragged2e}
 
 % --- 2. GEOMETRÍA Y DISEÑO DE PÁGINA ---
-\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
 \usepackage{setspace} % Control del interlineado
 \onehalfspacing       % Interlineado 1.5
 
@@ -33,10 +34,11 @@
 \begin{document}
 
 % --- PORTADA Y PRELIMINARES ---
-\input{Chapters/cover.tex} % Llama a tu portada externa
+\include{Chapters/cover.tex}
+\include{Chapters/prelims}
 
 \begin{abstract}
-Aquí va el resumen de tu tesis en español.
+Pendiente.
 \end{abstract}
 
 \tableofcontents
