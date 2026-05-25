@@ -1,0 +1,53 @@
+\documentclass[12pt, a4paper, oneside]{report}
+
+% --- 1. CODIFICACIÓN E IDIOMA ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc} % Por seguridad (aunque en LaTeX moderno ya es por defecto)
+\usepackage[spanish, es-tabla, es-noquoting]{babel}
+\usepackage{csquotes} % Evita advertencias fatales al usar BibLaTeX con Babel
+
+% --- 2. GEOMETRÍA Y DISEÑO DE PÁGINA ---
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=3cm]{geometry}
+\usepackage{setspace} % Control del interlineado
+\onehalfspacing       % Interlineado 1.5
+
+% --- 3. TIPOGRAFÍA Y MICRO-ESTÉTICA ---
+\usepackage{lmodern}
+\usepackage{microtype} % Evita errores de "Overfull \hbox" (texto desbordado).
+
+% --- 4. MATEMÁTICAS, IMÁGENES Y COLORES ---
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[export]{adjustbox}
+\graphicspath{{Images/}}
+
+% --- 5. BIBLIOGRAFÍA ---
+\usepackage[backend=biber, style=apa, language=spanish]{biblatex}
+\addbibresource{References/referencias.bib}
+
+% --- 6. ENLACES Y REFERENCIAS CRUZADAS (Siempre al final) ---
+\usepackage[hidelinks]{hyperref} % Gestiona los hipervínculos del PDF
+\usepackage[spanish, noabbrev, nameinlink]{cleveref} % Escribe "Figura 1" o "Tabla 2" solo con poner \cref{label}
+
+\begin{document}
+
+% --- PORTADA Y PRELIMINARES ---
+\input{Chapters/cover.tex} % Llama a tu portada externa
+
+\begin{abstract}
+Aquí va el resumen de tu tesis en español.
+\end{abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% --- CAPÍTULOS ---
+% \include{Chapters/01-introduccion}
+% \include{Chapters/02-marco-teorico}
+
+% --- BIBLIOGRAFÍA ---
+%   \printbibliography
+
+\end{document}
