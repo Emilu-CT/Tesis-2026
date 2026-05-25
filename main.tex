@@ -35,16 +35,21 @@
 
 % --- PORTADA Y PRELIMINARES ---
 \include{Chapters/cover.tex}
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\pagenumbering{Roman}
 \include{Chapters/prelims}
 
-\begin{abstract}
-Pendiente.
-\end{abstract}
+\newpage
 
 \tableofcontents
 \listoffigures
 \listoftables
 
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 % --- CAPÍTULOS ---
 % \include{Chapters/01-introduccion}
 % \include{Chapters/02-marco-teorico}
