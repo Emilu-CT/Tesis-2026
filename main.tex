@@ -24,8 +24,13 @@
 \graphicspath{{Images/}}
 
 % --- 5. BIBLIOGRAFÍA ---
-\usepackage[backend=biber, style=apa, language=spanish]{biblatex}
-\addbibresource{References/referencias.bib}
+\usepackage{csquotes}
+\usepackage[
+    backend=biber, 
+    style=apa, 
+    language=spanish
+    ]{biblatex}
+\addbibresource{References/references.bib}
 
 % --- 6. ENLACES Y REFERENCIAS CRUZADAS (Siempre al final) ---
 \usepackage[hidelinks]{hyperref} % Gestiona los hipervínculos del PDF
@@ -51,10 +56,12 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 % --- CAPÍTULOS ---
-% \include{Chapters/01-introduccion}
-% \include{Chapters/02-marco-teorico}
+\include{Chapters/01-Introduction}
+\include{Chapters/02-TheoreticalFramework}
 
 % --- BIBLIOGRAFÍA ---
-%   \printbibliography
+\newpage
+\addcontentsline{toc}{chapter}{Bibliografía}
+\printbibliography[title={Bibliografía}]
 
 \end{document}
