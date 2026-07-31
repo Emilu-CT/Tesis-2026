@@ -36,6 +36,18 @@
 \usepackage[hidelinks]{hyperref} % Gestiona los hipervínculos del PDF
 \usepackage[spanish, noabbrev, nameinlink]{cleveref} % Escribe "Figura 1" o "Tabla 2" solo con poner \cref{label}
 
+% --- 7. ÍNDICE DE ACRÓNIMOS ---
+\usepackage{array}
+\usepackage{acro}
+\acsetup{
+  list/name = {Índice de Acrónimos},
+  list/template = tabular, % Usamos 'tabular' que viene integrado por defecto
+}
+
+% Carga tus abreviaciones
+\input{acronyms.tex}
+
+
 \begin{document}
 
 % --- PORTADA Y PRELIMINARES ---
@@ -43,18 +55,24 @@
 \newpage
 \thispagestyle{empty}
 \mbox{}
+
 \pagenumbering{Roman}
 \include{Chapters/prelims}
-
-\newpage
 
 \tableofcontents
 \listoffigures
 \listoftables
 
+\cleardoublepage
+\printacronyms
+
 \newpage
+\thispagestyle{empty}
+\mbox{}
+
 \pagenumbering{arabic}
 \setcounter{page}{1}
+
 % --- CAPÍTULOS ---
 \include{Chapters/01-Introduction}
 \include{Chapters/02-TheoreticalFramework}
