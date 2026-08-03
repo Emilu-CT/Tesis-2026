@@ -16,42 +16,55 @@
 \usepackage{lmodern}
 \usepackage{microtype} % Evita errores de "Overfull \hbox" (texto desbordado).
 
-% --- 4. MATEMÁTICAS, IMÁGENES Y COLORES ---
+% --- 4. MATEMÁTICAS, TABLAS, IMÁGENES Y COLORES ---
 \usepackage{amsmath, amssymb}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage[export]{adjustbox}
 \graphicspath{{Images/}}
+\usepackage{longtable}
+\usepackage{array}
 
-% --- 5. BIBLIOGRAFÍA ---
-\usepackage{csquotes}
+% --- 5. ÍNDICE Y PROFUNDIDAD DE SECCIONES ---
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+% --- 6. BIBLIOGRAFÍA Y ANEXOS ---
 \usepackage[
     backend=biber, 
     style=apa, 
     language=spanish
     ]{biblatex}
+
 \addbibresource{References/references.bib}
 
-% --- 6. ENLACES Y REFERENCIAS CRUZADAS (Siempre al final) ---
-\usepackage[hidelinks]{hyperref} % Gestiona los hipervínculos del PDF
-\usepackage[spanish, noabbrev, nameinlink]{cleveref} % Escribe "Figura 1" o "Tabla 2" solo con poner \cref{label}
+% --- 7. ENLACES Y REFERENCIAS CRUZADAS ---
+\usepackage[hidelinks]{hyperref}
+\usepackage[spanish, noabbrev, nameinlink]{cleveref} 
+\addto\captionsspanish{%
+  \renewcommand{\appendixname}{Anexo}%
+}
+\crefname{appchapter}{Anexo}{Anexos}
 
-% --- 7. ÍNDICE DE ACRÓNIMOS ---
+% --- 8. ÍNDICE DE ACRÓNIMOS ---
 \usepackage{array}
 \usepackage{acro}
 \acsetup{
   list/name = {Índice de Acrónimos},
-  list/template = tabular, % Usamos 'tabular' que viene integrado por defecto
+  list/template = tabular, 
 }
-
-% Carga tus abreviaciones
 \input{acronyms.tex}
 
+
+
+% ==========================================================================
+% DOCUMENTO PRINCIPAL
+% ==========================================================================
 
 \begin{document}
 
 % --- PORTADA Y PRELIMINARES ---
-\include{Chapters/cover.tex}
+\include{Chapters/cover}
 \newpage
 \thispagestyle{empty}
 \mbox{}
@@ -81,5 +94,13 @@
 \newpage
 \addcontentsline{toc}{chapter}{Bibliografía}
 \printbibliography[title={Bibliografía}]
+
+% --- ANEXOS ---
+\clearpage
+\appendix
+\addcontentsline{toc}{chapter}{Anexos}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}
+
+\input{appendices.tex}
 
 \end{document}
