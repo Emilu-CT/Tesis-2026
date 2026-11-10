@@ -116,44 +116,40 @@ de \textcite{Barnes2013}, texto guía de la asignatura Introducción a la
 Programación.
 \vspace{1.5em} 
 
-\noindent\textbf{Objeto} \\ 
+\noindent\textbf{Objeto} \vspace{0.5em} \\
 \indent Un objeto es la abstracción de un elemento del mundo real o de un 
 concepto dentro del dominio de un problema, y representa la concretización o 
 manifestación en memoria de una clase. Aunque los términos «objeto» e 
 «instancia» suelen emplearse como sinónimos, se utiliza este último para 
 enfatizar que un objeto específico ha sido creado a partir de una clase 
 determinada.
-
 \vspace{1.5em}
 
-\noindent\textbf{Clase} \\ 
+\noindent\textbf{Clase} \vspace{0.5em} \\ 
 \indent Funciona como la plantilla o el plano a partir del cual se definen el 
 comportamiento y las características que compartirán todas sus instancias. 
 Una clase describe, de manera abstracta, la esencia de las entidades dentro del 
 dominio de un problema. En ella se declaran los métodos que ejecutan las 
 acciones y la estructura de los campos que almacenan los datos.
-
 \vspace{1.5em}
 
-\noindent\textbf{Campos y Estado} \\ 
-\indent Los campos o variables de instancia son espacios reservados dentro de 
-un objeto orientados a almacenar información de manera persistente. La 
-combinación y los valores particulares asignados a estos campos en un 
+\noindent\textbf{Atributos y estado} \vspace{0.5em} \\ 
+\indent Los atributos, campos o variables de instancia son espacios reservados 
+dentro de un objeto orientados a almacenar información de manera persistente. 
+La combinación y los valores particulares asignados a estos campos en un 
 instante determinado de la ejecución definen el estado interno del objeto, el 
 cual puede ser modificado con respecto a sus valores iniciales a lo largo de 
 su ciclo de vida.
-
 \vspace{1.5em}
 
-\noindent\textbf{Constructor} \\ 
+\noindent\textbf{Constructor} \vspace{0.5em} \\ 
 \indent Los constructores son métodos especiales que tienen el mismo nombre 
 que la clase en la que se definen; son responsables de garantizar que cada 
 objeto se configure e inicialice adecuadamente al momento de su creación, 
 proceso conocido como inicialización.
-
 \vspace{1.5em}
 
-\noindent\textbf{Métodos} \\ 
+\noindent\textbf{Métodos} \vspace{0.5em} \\ 
 \indent Son las funciones o procedimientos declarados dentro de una clase que 
 implementan el comportamiento de los objetos y les proporcionan funcionalidad. 
 Representan las operaciones disponibles para manipular su estado interno o 
@@ -163,16 +159,18 @@ las instrucciones a ejecutar. Se clasifican principalmente en métodos
 selectores, que consultan y devuelven información sobre el estado de un 
 objeto sin alterarlo, y métodos mutadores, los cuales modifican el valor de 
 uno o más atributos para cambiar su estado.
-
 \vspace{1.5em}
 
-\noindent\textbf{Parámetros y Variables locales} \\ 
-\indent Son mecanismos de almacenamiento de datos. Los parámetros se definen en 
-la signatura de un método o constructor y actúan como mensajeros temporales 
-que transportan datos provenientes del exterior. Por su parte, las variables 
-locales se declaran y utilizan exclusivamente dentro del cuerpo de un único 
-método para guardar datos auxiliares durante el cálculo de una tarea. A 
-diferencia de los campos, no son accesibles para otros métodos del objeto.
+\noindent\textbf{Parámetros, Variables locales y Asignación} \vspace{0.5em} \\ 
+\indent Los parámetros y las variables locales son mecanismos de almacenamiento 
+de datos con un tiempo de vida acotado. Los parámetros se definen en la 
+signatura de un método o constructor y actúan como elementos temporales para 
+recibir datos desde el exterior. Por su parte, las variables locales se 
+declaran y utilizan exclusivamente dentro del cuerpo de un método para 
+almacenar datos auxiliares durante la ejecución de una tarea. A diferencia de 
+los atributos, estos componentes no son accesibles para otros métodos del 
+objeto; sin embargo, la modificación o fijación de sus valores se realiza 
+mediante instrucciones de asignación en todos los casos.
 
 \subsection{Arquitectura y dinámica de funcionamiento}
 La arquitectura abarca la estructura estática, el diseño conceptual y la 
@@ -182,41 +180,46 @@ cómo fluye la ejecución de las tareas.
 \vspace{1.5em} 
 
 
-\noindent\textbf{Instanciación y Creación de estado} \\ 
+\noindent\textbf{Instanciación y Creación de estado} \vspace{0.5em} \\ 
 \indent En tiempo de ejecución, el proceso de instanciación convierte la 
 especificación abstracta de una clase en una entidad activa en memoria mediante 
 la invocación de un constructor. Durante este proceso, se asigna espacio para 
-los campos y se establece el estado inicial. Un mismo sistema puede alojar 
-múltiples instancias independientes de una misma clase, cada una con un estado 
-interno único y diferenciado en sus campos.
-
+los campos y se establece el estado inicial.
 \vspace{1.5em}
 
-\noindent\textbf{Modularización} \\ 
+\noindent\textbf{Instancias múltiples e Identidad} \vspace{0.5em} \\ 
+\indent Una clase puede tener múltiples instancias, las cuales se distinguen 
+entre sí por su identidad, estado y comportamiento. La identidad garantiza la 
+individualidad de cada instancia, lo que permite diferenciarlas de forma 
+unívoca en memoria mediante un identificador único asignado en su creación, 
+incluso si dos o más objetos comparten un estado y un comportamiento 
+equivalentes.
+\vspace{1.5em}
+
+\noindent\textbf{Modularización} \vspace{0.5em} \\ 
 \indent Es la técnica de dividir un sistema complejo en componentes o clases 
 independientes con responsabilidades bien delimitadas. Permite examinar, 
 construir y depurar cada parte por separado antes de integrarla al conjunto. 
 De este modo, un sistema complejo se estructura combinando componentes más 
 simples mediante relaciones de composición.
-
 \vspace{1.5em}
 
-\noindent\textbf{Abstracción} \\ 
+\noindent\textbf{Abstracción} \vspace{0.5em} \\ 
 \indent Consiste en ignorar los detalles irrelevantes para centrar la atención 
 en un nivel superior del problema, seleccionando únicamente las características 
-esenciales del modelo.
+esenciales del modelo.\vspace{1.5em}
 
-\vspace{1.5em}
-
-\noindent\textbf{Objetos que crean objetos e Interacción entre objetos} \\ 
+\noindent\textbf{Objetos que crean objetos, Interacción entre objetos y mensajería} \vspace{0.5em} \\ 
 \indent El flujo lógico del software no se ejecuta de forma aislada, sino 
-mediante un modelo de interacción entre objetos, el cual incluye la capacidad 
-de las instancias para crear objetos de otras clases como parte de su 
-funcionamiento. En este esquema, los objetos interactúan e invocan métodos 
-tanto de otras entidades como de su misma clase; esta comunicación se realiza 
-mediante la llamada a métodos, donde los parámetros sirven como vehículo de 
-entrada de datos y los valores de retorno transfieren los resultados procesados 
-en el sistema.
+mediante un modelo de interacción entre objetos que incluye la capacidad de las 
+instancias para crear objetos de otras clases como parte de su funcionamiento. 
+En tiempo de ejecución, este esquema y la comunicación dinámica entre entidades 
+se fundamenta en la transmisión de mensajes a través de la invocación de 
+métodos. Dicha invocación puede dirigirse a rutinas dentro de la misma clase 
+(llamada a método interno) o a funciones pertenecientes a otras instancias 
+(llamada a método externo). En este proceso, los parámetros actúan como el 
+vehículo de entrada para los datos, mientras que los valores de retorno 
+transfieren los resultados procesados hacia el sistema.
 
 \section{Realidad Aumentada}
 
